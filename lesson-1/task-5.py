@@ -15,6 +15,6 @@ elif profit == 0:
     print ('Фирма отработала в ноль')
 else:
     print (f'Прибыль фирмы равна {profit}')
-    print (f'Рентабельность выручки равна {profit / revenue}')
+    print ('Рентабельность выручки равна {:.2f}'.format(profit / revenue))
     count = int(input('Введите численность сотрудников: '))
-    print (f'Прибыль фирмы на одного сотрудника: {profit / count}')
+    print ('Прибыль фирмы на одного сотрудника: {:.2f}'.format(profit / count))
