@@ -11,5 +11,7 @@ while a // 10 != 0:
     if numb >= max:
         max = numb
     a = a // 10
+if (a //10 == 0) and (a % 10 > max):
+    max = a % 10
 print(f'Самая большая цифра в числе равна {max}')
 
