@@ -2,6 +2,6 @@
 # Реализовать скрипт проверки типа данных каждого элемента.
 # Использовать функцию type() для проверки типа.
 # Элементы списка можно не запрашивать у пользователя, а указать явно, в программе.
-my_list = [2, 2.0, 'string', True, None, {'key1':'parameter1'}]
-for element in my_list:
-    print(type(element))
+my_list = [2, 2.0, 'string', True, None, {'key1':'parameter1'}, range (10)]
+for i, element in enumerate (my_list):
+    print(i + 1,'. ',type(element))
