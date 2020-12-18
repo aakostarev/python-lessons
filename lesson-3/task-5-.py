@@ -24,4 +24,14 @@ def sum_num():
 print (sum_num())
 
 time_used = time.perf_counter() - start #подсчет времени отработки программы
-print(f'{time_used:.5f}' ' sec')
+print(f'{time_used:.5f}' ' sec\n')
+
+#вариант решения:
+num = 0
+try:
+    while num != '#':
+        for i in map(float,input('Для выхода наберите #".\nВведите числа, используя пробел.\n').split()):
+            num += i
+        print(num)
+except ValueError:
+    print(num)
