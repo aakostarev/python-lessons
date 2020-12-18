@@ -2,6 +2,8 @@
 # описывающих данные пользователя: имя, фамилия, год рождения, город проживания, email, телефон.
 # Функция должна принимать параметры как именованные аргументы.
 # Реализовать вывод данных о пользователе одной строкой.
-def dataset(name, surname, burth, city, e_mail, phone):
-    print(f'Имя: {name}, фамилия: {surname}, год рождения: {burth}, город: {city}, email: {e_mail}, телефон: {phone}.')
-dataset(name='Алексей', surname='Костарев', burth='1988', city='Уфа', e_mail='alkostarev@gmail.com', phone='+1234567')
+def dataset(**kwargs):
+    return ' '.join(kwargs.values())
+print(dataset(name=input('Ваше имя: '), surname=input('Ваша фамилия: '),
+            burth=input('Ваш год рождения: '), city=input('В каком городе Вы живете: '),
+              e_mail=input('Ваш e-mail: '), phone=input('Ваш телефон: ')))
