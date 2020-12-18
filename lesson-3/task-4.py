@@ -8,28 +8,23 @@
 
 while True:
     a = float(input('Введите действительное положительное число a: '))
-    if not a > 0:
-        print('Вы ввели не положительное число a. Попробуйте снова. ')
-    else:
-        print("Число введено верно.")
-        break
-while True:
     b = int(input('Введите целое отрицательное число b: '))
-    if not b < 0:
-        print("Вы ввели не отрицательное число. Попробуйте снова")
+    if not (a > 0 and b < 0):
+        print('Вы ввели не положительное число a, либо  не отрицательное число b. Попробуйте снова. ')
     else:
-        print("Число введено верно.")
+        print("Числа введены верно.")
         break
+
 # решение с **
 def my_func_1 (x,y):
-    z = x**y
-    return z
+    z1 = x**y
+    return z1
 print(f'Число a в степени b равно {my_func_1(a,b):.3f}')
 
 # решение с циклом:
 def my_func_2 (x,y):
     z2 = 1
     for i in range (1,abs(y) + 1):
-        z2 *= x
-    return (1 / z2)
+        z2 /= x
+    return (z2)
 print(f'Число a в степени b равно {my_func_2(a,b):.3f}')
