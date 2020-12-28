@@ -2,11 +2,13 @@
 # Числа запрашивать у пользователя, предусмотреть обработку ситуации деления на ноль.
 def division(a, b):
     try:
-        c = a / b
-        return c
+        a, b = float(a), float(b)
+        c = round(a / b, 4)
     except ZeroDivisionError:
-        c = 'Деление на 0!'
-        return(c)
-d, e = (float(i) for i in input('Введите 2 числа через пробел: ').split())
-print (f'Результат деления: {division(d, e):.2f}') if type(division(d, e)) != str else print (division(d, e))
+        return('Деление на 0!')
+    except ValueError:
+        return ('Value error')
+    return(c)
+d, e = (i for i in input('Введите 2 числа через пробел: ').split())
+print (f'Результат деления: {division(d, e)}') if type(division(d, e)) != str else print (division(d, e))
 

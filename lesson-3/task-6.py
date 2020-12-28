@@ -5,7 +5,7 @@ string = input('Введите строку: ')
 
 #способ решения 1
 def int_func(str):
-    new_list = [element.capitalize() for element in str.split(' ')]
+    new_list = [element.capitalize() for element in str.split()]
     new_str = ' '.join(new_list)
     return new_str
 print(int_func(string))
