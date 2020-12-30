@@ -1,7 +1,7 @@
 # Создать программно файл в текстовом формате, записать в него построчно данные,
 # вводимые пользователем. Об окончании ввода данных свидетельствует пустая строка.
 
-out_f = open("out_file.txt", "w")
+out_f = open("task-1.txt", "w")
 while True:
     a = input('Введите строку для записи в файл и нажмите Enter для записи. '
                     'Для окончания ввода введите пустую строку: ')
@@ -10,7 +10,7 @@ while True:
     else:
         print("Выходим из файла.")
         break
-out_f = open("out_file.txt", "r")
+out_f = open("task-1.txt", "r")
 content = out_f.read()
 print(content)
 out_f.close()
