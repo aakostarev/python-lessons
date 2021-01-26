@@ -9,7 +9,7 @@
 import termcolor, time
 
 class TrafficLight:
-    color = ''
+    __color = ''
 
     def running(self):
         x = 0  # переменная для выхода из While
