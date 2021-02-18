@@ -17,3 +17,4 @@ else:
     print (f'Результат - {a/b}')
 finally:
     print('Программа завершена.')
+print('Bye!')
