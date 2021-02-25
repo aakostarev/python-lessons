@@ -6,44 +6,53 @@
 # числа, месяца и года (например, месяц — от 1 до 12). Проверить работу полученной структуры
 # на реальных данных.
 
-class Data:
+class MyDate:
+    def __init__(self, date):
+        self.date = date
 
     @classmethod
     def changing (cls, strng):
-        global integ
-        s = strng
         integ = []
         i = 0
-        while i < len(s):
+        while i < len(strng):
             s_int = ''
-            a = s[i]
+            a = strng[i]
             while '0' <= a <= '9':
                 s_int += a
                 i += 1
-                if i < len(s):
-                    a = s[i]
+                if i < len(strng):
+                    a = strng[i]
                 else:
                     break
             i += 1
             if s_int != '':
                 integ.append(int(s_int))
+        if cls.validation(integ):
+            return f'число: {integ[0]}, месяц: {integ[1]}, год: {integ[2]}'
+        else:
+            return ('Ошибка валидации')
 
     @staticmethod
-    def validation(integ):
-        day = integ[0]
-        month = integ[1]
-        year = integ[2]
-        print(f'Валидация {integ}, as a day: {day}, as a month: {month}, as a year: {year}')
+    def validation(date):
+        day = date[0]
+        month = date[1]
+        year = date[2]
+        print(f'Валидация {date}, as a day: {day}, as a month: {month}, as a year: {year}')
         if (day < 1) or (day > 31):
             print ('День не валиден!')
+            return False
         if (month < 1) or (month > 12):
             print ('Месяц не валиден!')
+            return False
         if (year < 1900) or (year > 2050):
             print ('Год не валиден!')
-Data.changing('dg454f67b4e5c3gf676')
-Data.validation(integ)
+            return False
+        else:
+            return True
+a = MyDate.changing('dg454f67b4e5c3gf676')
+print(a)
 print ('*' * 40)
-Data.changing('dg12f02b1988e5c3gf676')
-Data.validation(integ)
-print('Bye!')
+b = MyDate.changing('dg12f02b1988e5c3gf676')
+print(b)
+
 
